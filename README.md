@@ -57,7 +57,7 @@ This repository contains the source code for the "Discover Prag" web application
 ## 📈 Analytics
 
 Google Analytics is configured via `@next/third-parties`.
-- **Measurement ID**: `G-83QTC9GD99`
+- **Measurement ID**: Configured via environment variables / source code.
 
 ## 🤝 Contributing
 
