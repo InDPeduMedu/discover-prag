@@ -1,30 +1,37 @@
 export default function Page() {
     return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground p-4">
-            <div className="relative group">
-                {/* Decorative background blur */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/50 to-primary/20 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-
-                <div className="relative px-8 py-12 bg-card border border-border rounded-xl shadow-2xl text-center max-w-md">
-                    <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl mb-4">
-                        In development
-                    </h1>
-                    <p className="text-lg text-muted-foreground font-medium">
-                        Stay tuned. Something amazing is coming.
-                    </p>
-
-                    <div className="mt-8 flex justify-center">
-                        <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary-foreground ring-1 ring-inset ring-primary/20">
-                            Coming Soon
-                        </span>
-                    </div>
-                </div>
+        <div className="flex min-h-screen flex-col items-center justify-center bg-background text-foreground overflow-hidden">
+            {/* Dynamic Background Elements */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px] animate-pulse" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] animate-pulse delay-700" />
             </div>
 
-            {/* Subtle background pattern/elements */}
-            <div className="fixed top-0 left-0 -z-10 h-full w-full">
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-80 w-80 rounded-full bg-primary/5 blur-3xl"></div>
+            <main className="relative z-10 flex flex-col items-center text-center px-6">
+                <div className="space-y-4">
+                    <h1 className="text-6xl md:text-8xl font-black tracking-tighter text-foreground selection:bg-primary selection:text-primary-foreground">
+                        DISCOVER<span className="text-primary italic">.</span>PRAG
+                    </h1>
+
+                    <div className="flex items-center justify-center gap-4">
+                        <div className="h-[1px] w-12 bg-border" />
+                        <p className="text-sm md:text-base font-bold tracking-[0.3em] uppercase text-muted-foreground">
+                            Coming Soon
+                        </p>
+                        <div className="h-[1px] w-12 bg-border" />
+                    </div>
+                </div>
+
+                <div className="mt-12 group cursor-default">
+                    <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-[280px] md:max-w-none transition-colors duration-500 group-hover:text-foreground">
+                        A new standard in digital excellence is being forged.
+                    </p>
+                </div>
+            </main>
+
+            {/* Decorative Footer Element */}
+            <div className="absolute bottom-12 flex flex-col items-center opacity-40">
+                <div className="w-1 h-8 bg-gradient-to-b from-primary to-transparent rounded-full" />
             </div>
         </div>
     );
