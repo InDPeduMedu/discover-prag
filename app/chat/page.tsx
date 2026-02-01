@@ -96,7 +96,7 @@ export default function ChatPage() {
                                                     ol: ({ node, ...props }: any) => <ol className="list-decimal pl-6 space-y-2 mb-4" {...props} />,
                                                     li: ({ node, ...props }: any) => <li className="mb-1" {...props} />,
                                                     p: ({ node, ...props }: any) => <p className="mb-4 last:mb-0" {...props} />,
-                                                    strong: ({ node, ...props }: any) => <strong className="font-bold text-primary/90" {...props} />,
+                                                    strong: ({ node, ...props }: any) => <strong className="font-bold" {...props} />,
                                                 }}
                                             >
                                                 {msg.text}
