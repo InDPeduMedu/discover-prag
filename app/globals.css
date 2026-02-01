@@ -137,8 +137,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.15;
-    /* Increased opacity for visibility */
+    opacity: 0.08;
+    /* User requested 0.08 */
     pointer-events: none;
   }
 
