@@ -1,0 +1,129 @@
+[
+  {
+    "itinerary_id": "day1_classic_icons",
+    "title_en": "Classic Icons in One Day",
+    "ideal_for_en": "First-time visitors who want the most famous sights in a relaxed day.",
+    "total_estimated_minutes": 480,
+    "sequence": [
+      {
+        "order": 1,
+        "poi_id": "poi_old_town_square",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 2,
+        "poi_id": "poi_astronomical_clock",
+        "suggested_minutes": 30
+      },
+      {
+        "order": 3,
+        "poi_id": "poi_charles_bridge",
+        "suggested_minutes": 45
+      },
+      {
+        "order": 4,
+        "poi_id": "poi_prague_castle",
+        "suggested_minutes": 180
+      },
+      {
+        "order": 5,
+        "poi_id": "poi_st_vitus_cathedral",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 6,
+        "poi_id": "poi_letna_park",
+        "suggested_minutes": 60
+      }
+    ]
+  },
+  {
+    "itinerary_id": "day_architecture_focus",
+    "title_en": "Architecture Lovers' Afternoon",
+    "ideal_for_en": "Visitors interested in styles from Gothic to Cubism and modern design.",
+    "total_estimated_minutes": 300,
+    "sequence": [
+      {
+        "order": 1,
+        "poi_id": "poi_municipal_house",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 2,
+        "poi_id": "poi_house_black_madonna",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 3,
+        "poi_id": "poi_old_town_square",
+        "suggested_minutes": 45
+      },
+      {
+        "order": 4,
+        "poi_id": "poi_charles_bridge",
+        "suggested_minutes": 45
+      },
+      {
+        "order": 5,
+        "poi_id": "poi_dancing_house",
+        "suggested_minutes": 45
+      },
+      {
+        "order": 6,
+        "poi_id": "poi_national_theatre",
+        "suggested_minutes": 45
+      }
+    ]
+  },
+  {
+    "itinerary_id": "rainy_day_museums",
+    "title_en": "Rainy Day Museums",
+    "ideal_for_en": "Visitors on a rainy or cold day who want mainly indoor sights.",
+    "total_estimated_minutes": 360,
+    "sequence": [
+      {
+        "order": 1,
+        "poi_id": "poi_national_museum",
+        "suggested_minutes": 150
+      },
+      {
+        "order": 2,
+        "poi_id": "poi_municipal_house",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 3,
+        "poi_id": "poi_house_black_madonna",
+        "suggested_minutes": 60
+      },
+      {
+        "order": 4,
+        "poi_id": "poi_national_theatre",
+        "suggested_minutes": 90
+      }
+    ]
+  },
+  {
+    "itinerary_id": "offbeat_parks_views",
+    "title_en": "Offbeat Parks & Views",
+    "ideal_for_en": "Visitors who want quieter viewpoints and green spaces.",
+    "total_estimated_minutes": 360,
+    "sequence": [
+      {
+        "order": 1,
+        "poi_id": "poi_vysehrad",
+        "suggested_minutes": 120
+      },
+      {
+        "order": 2,
+        "poi_id": "poi_letna_park",
+        "suggested_minutes": 90
+      },
+      {
+        "order": 3,
+        "poi_id": "poi_petrin_hill",
+        "suggested_minutes": 150
+      }
+    ]
+  }
+]

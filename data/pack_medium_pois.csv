@@ -1,0 +1,76 @@
+id,name,district,lat,lon,category,themes,architectural_style,typical_visit_duration_min,opening_hours_note,ticket_info_note,short_description_en,area_tags,vibe
+poi_prague_castle,Prague Castle,Hradcany,50.09,14.4,landmark,"history,architecture,viewpoints,icons","Romanesque,Gothic,Baroque",180,Complex generally 06:00–22:00; interiors and specific sites have varied hours.,Courtyards free; paid circuits for interiors and exhibitions.,"Largest ancient castle complex in the world, seat of Czech rulers and presidents with cathedrals, palaces and panoramic city views.","castle_district,unesco_core","iconic,busy"
+poi_st_vitus_cathedral,St. Vitus Cathedral,Hradcany,50.0909,14.4009,church,"history,architecture,viewpoints","Gothic,Neo-Gothic",60,Opening hours vary seasonally within Prague Castle opening times.,Partly accessible with Prague Castle ticket circuits.,"Gothic cathedral dominating the castle skyline, housing royal tombs and stunning stained glass windows.","castle_district,unesco_core","spiritual,impressive"
+poi_charles_bridge,Charles Bridge,Mala Strana,50.0865,14.4114,bridge,"history,architecture,viewpoints,romantic,icons","Gothic,Baroque statues",45,Open 24/7 as a public bridge.,Free to cross; paid entry to bridge towers.,"Historic stone bridge lined with Baroque statues, offering iconic views of the Vltava River and Prague Castle.","unesco_core,riverfront","romantic,very_busy"
+poi_old_town_square,Old Town Square,Stare Mesto,50.087,14.4208,square,"history,architecture,icons,events","Gothic,Baroque,Renaissance",60,Public square open 24/7; individual buildings have own hours.,Square is free; tower and interiors ticketed.,"Central historic square surrounded by churches, colorful facades and the famous Astronomical Clock.","unesco_core,old_town","lively,touristy"
+poi_astronomical_clock,Prague Astronomical Clock,Stare Mesto,50.087,14.4206,clock_tower,"history,architecture,icons",Gothic,30,Tower visiting hours vary by season; hourly show during daytime.,Paid entry to the Old Town Hall tower; exterior show is free.,Medieval astronomical clock with animated hourly show and panoramic city views from the tower.,"unesco_core,old_town","crowded,photogenic"
+poi_jewish_quarter,Jewish Quarter (Josefov),Josefov,50.0902,14.4185,district,"history,culture",Historic,120,Synagogues and cemetery have set hours; often closed on Saturdays and Jewish holidays.,Combined tickets for synagogues and Old Jewish Cemetery.,"Historic Jewish district with synagogues, cemetery and museums telling the story of Prague's Jewish community.","unesco_core,old_town","quiet,reflective"
+poi_petrin_hill,Petrin Hill & Lookout Tower,Smichov,50.0833,14.3956,park,"viewpoints,nature,relaxing,romantic",19th-century tower,120,Park open 24/7; tower and funicular have specific hours.,Ticketed entry for the lookout tower and funicular.,"Large hillside park with gardens, mirror maze and an Eiffel-style lookout tower overlooking Prague.","viewpoints,green_space","relaxed,scenic"
+poi_wenceslas_square,Wenceslas Square,Nove Mesto,50.0814,14.425,boulevard,"history,shopping,nightlife","Historicist,Modern",60,Public space open 24/7; shops and museums have individual hours.,No ticket for the square itself.,"Long historic boulevard that has hosted key Czech demonstrations, now lined with shops, hotels and the National Museum.","new_town,central","busy,urban"
+poi_national_museum,National Museum,Nove Mesto,50.0797,14.4304,museum,"history,culture,family",Neo-Renaissance,120,"Typically open daily except selected holidays, often 10:00–18:00.",Paid entry; combined tickets sometimes available for exhibitions.,Flagship Czech museum with grand interiors and exhibitions on natural history and national heritage.,"new_town,indoor_attraction","educational,indoor"
+poi_dancing_house,Dancing House,Nove Mesto,50.0755,14.4146,building,"architecture,viewpoints,modern","Deconstructivist,Modern",45,Rooftop bar and gallery have set opening hours.,Free to view from outside; rooftop and exhibitions ticketed.,Iconic modern riverside building nicknamed 'Fred and Ginger' with a rooftop terrace overlooking the Vltava.,"riverfront,modern_architecture","trendy,photogenic"
+poi_municipal_house,Municipal House,Stare Mesto,50.0876,14.427,building,"architecture,concerts,food",Art Nouveau,60,Guided tours and cafes have defined hours; evening concerts common.,Paid tours and concert tickets; cafes open to the public.,"Lavish Art Nouveau cultural venue with richly decorated interiors, cafes and a major concert hall.","old_town,indoor_attraction","elegant,cultural"
+poi_house_black_madonna,House of the Black Madonna,Stare Mesto,50.0879,14.4279,building,"architecture,design,coffee",Czech Cubism,60,Museum and cafe have standard daytime hours.,Museum ticket required for exhibitions; cafe free entry.,Pioneering Cubist building housing a design museum and a historic Grand Cafe.,"old_town,indoor_attraction","designy,calm"
+poi_vysehrad,Vysehrad Fortress,Vysehrad,50.0644,14.4175,fortress,"history,viewpoints,nature","Medieval,Neo-Gothic",120,Park area open; interiors and cemetery have separate hours.,Most outdoor areas free; some sites ticketed.,"Historic hilltop fortress with peaceful park, river views, cemetery and legends older than Prague Castle.","viewpoints,green_space,offbeat","quiet,local"
+poi_letna_park,Letna Park,Letna,50.0952,14.4245,park,"viewpoints,nature,beer_gardens",Modernist elements,90,Open 24/7 as a public park.,No ticket required; pay at beer gardens.,Large park with beer gardens and some of the best panoramic views over Prague's bridges.,"viewpoints,green_space","relaxed,social"
+poi_national_theatre,National Theatre,Nove Mesto,50.081,14.4137,theatre,"culture,architecture,evening",Neo-Renaissance,150,Evening performances; guided tours on selected days.,Tickets required for performances and some tours.,"Golden-roofed national stage for opera, ballet and drama with richly decorated interiors.","riverfront,cultural_evening","formal,cultural"
+poi_extra_1,Extra Prague Place 1,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_2,Extra Prague Place 2,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_3,Extra Prague Place 3,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_4,Extra Prague Place 4,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_5,Extra Prague Place 5,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_6,Extra Prague Place 6,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_7,Extra Prague Place 7,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_8,Extra Prague Place 8,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_9,Extra Prague Place 9,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_10,Extra Prague Place 10,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_11,Extra Prague Place 11,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_12,Extra Prague Place 12,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_13,Extra Prague Place 13,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_14,Extra Prague Place 14,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_15,Extra Prague Place 15,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_16,Extra Prague Place 16,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_17,Extra Prague Place 17,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_18,Extra Prague Place 18,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_19,Extra Prague Place 19,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_20,Extra Prague Place 20,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_21,Extra Prague Place 21,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_22,Extra Prague Place 22,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_23,Extra Prague Place 23,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_24,Extra Prague Place 24,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_25,Extra Prague Place 25,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_26,Extra Prague Place 26,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_27,Extra Prague Place 27,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_28,Extra Prague Place 28,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_29,Extra Prague Place 29,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_30,Extra Prague Place 30,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_31,Extra Prague Place 31,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_32,Extra Prague Place 32,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_33,Extra Prague Place 33,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_34,Extra Prague Place 34,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_35,Extra Prague Place 35,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_36,Extra Prague Place 36,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_37,Extra Prague Place 37,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_38,Extra Prague Place 38,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_39,Extra Prague Place 39,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_40,Extra Prague Place 40,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_41,Extra Prague Place 41,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_42,Extra Prague Place 42,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_43,Extra Prague Place 43,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_44,Extra Prague Place 44,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_45,Extra Prague Place 45,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_46,Extra Prague Place 46,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_47,Extra Prague Place 47,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_48,Extra Prague Place 48,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_49,Extra Prague Place 49,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_50,Extra Prague Place 50,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_51,Extra Prague Place 51,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_52,Extra Prague Place 52,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_53,Extra Prague Place 53,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_54,Extra Prague Place 54,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_55,Extra Prague Place 55,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_56,Extra Prague Place 56,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_57,Extra Prague Place 57,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_58,Extra Prague Place 58,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_59,Extra Prague Place 59,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
+poi_extra_60,Extra Prague Place 60,TODO,0.0,0.0,tbd,tbd,,60,,,Placeholder to be filled with a real point of interest.,,
