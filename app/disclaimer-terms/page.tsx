@@ -2,8 +2,11 @@
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { useContact } from "@/context/contact-context";
 
 export default function DisclaimerPage() {
+    const { openContact } = useContact();
+
     return (
         <div className="flex min-h-screen flex-col">
             <Header />
@@ -29,7 +32,7 @@ export default function DisclaimerPage() {
                     <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
                         <li>Use the site responsibly and legally.</li>
                         <li>Don’t try to hack, scrape or misuse the site.</li>
-                        <li>Contact [your-email@example.com] for issues or feedback.</li>
+                        <li>Contact <button onClick={openContact} className="text-primary font-medium hover:underline underline-offset-4">Contact Support</button> for issues or feedback.</li>
                     </ul>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">Changes</h3>

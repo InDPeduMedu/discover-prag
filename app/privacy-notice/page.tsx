@@ -2,8 +2,11 @@
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { useContact } from "@/context/contact-context";
 
 export default function PrivacyPage() {
+    const { openContact } = useContact();
+
     return (
         <div className="flex min-h-screen flex-col">
             <Header />
@@ -29,7 +32,7 @@ export default function PrivacyPage() {
                     </ul>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">Your rights</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">You can contact the site owner at [your-email@example.com] to ask about data or request deletion. As a Serbia‑based site, Serbian data protection laws apply.</p>
+                    <p className="text-muted-foreground leading-relaxed mb-6">You can contact the site owner at <button onClick={openContact} className="text-primary font-medium hover:underline underline-offset-4">Contact Support</button> to ask about data or request deletion. As a Serbia‑based site, Serbian data protection laws apply.</p>
                 </article>
             </main>
             <Footer />
