@@ -72,10 +72,10 @@ export default function ChatPage() {
                     /* Hero Mode: Centered Layout */
                     <div className="flex-1 flex flex-col items-center justify-center p-4 text-center max-w-5xl mx-auto w-full animate-in fade-in duration-500">
                         <div className="mb-12 space-y-6">
-                            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-                                Discover Prague
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter bg-clip-text text-transparent">
+                                <span className="text-primary">Discover</span>
                                 <br className="hidden md:inline" />
-                                <span className="text-primary italic block md:inline mt-2 md:mt-0">Tailored to YOU</span>
+                                <span className="text-foreground">Prague</span>
                             </h1>
                             <p className="text-lg text-muted-foreground md:text-2xl max-w-[800px] mx-auto">
                                 Your personal AI guide to the Heart of Europe.
