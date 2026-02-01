@@ -49,7 +49,7 @@ export async function submitContact(prevState: ContactState, formData: FormData)
     // For this demo, we verify the secure env var exists and log it.
 
     // Security: The email is read from Server Environment ONLY.
-    const destinationEmail = process.env.CONTACT_EMAIL || "zivke2017@example.com";
+    const destinationEmail = process.env.CONTACT_EMAIL || "contact@discoverprague.com";
 
     console.log(`[SECURE CONTACT] Message from ${validatedFields.data.email} to ${destinationEmail}`);
     console.log(`Content: ${validatedFields.data.message}`);
