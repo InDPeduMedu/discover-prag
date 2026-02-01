@@ -14,11 +14,11 @@ export function Footer() {
                     <Link href="/contact" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
                         Contact
                     </Link>
-                    <Link href="/privacy" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
-                        Privacy Policy
+                    <Link href="/privacy-notice" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
+                        Privacy Notice
                     </Link>
-                    <Link href="/terms" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
-                        Terms & Conditions
+                    <Link href="/disclaimer-terms" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
+                        Disclaimer & Terms of Use
                     </Link>
                 </div>
             </div>
