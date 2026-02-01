@@ -28,6 +28,9 @@ export function Footer() {
                     <Link href="/disclaimer-terms" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
                         Disclaimer & Terms of Use
                     </Link>
+                    <Link href="/project" className="text-sm font-medium text-muted-foreground underline-offset-4 hover:underline">
+                        The Project
+                    </Link>
                 </div>
             </div>
         </footer>
