@@ -104,9 +104,6 @@ export default function ChatPage() {
                                 </Button>
                             </div>
                         </div>
-                        <div className="mt-auto pb-4">
-                            <Footer />
-                        </div>
                     </div>
                 ) : (
                     /* Chat Mode: Scrollable Messages + Fixed Bottom Input */
@@ -189,7 +186,9 @@ export default function ChatPage() {
                     </>
                 )
                 }
-            </main >
-        </div >
+            </main>
+
+            {!isChatStarted && <Footer />}
+        </div>
     );
 }
