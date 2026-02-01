@@ -67,7 +67,7 @@ export default function ChatPage() {
         <div className="flex flex-col h-screen overflow-hidden">
             <Header />
 
-            <main className="flex-1 flex flex-col relative overflow-hidden bg-background">
+            <main className={`flex-1 flex flex-col relative overflow-hidden ${isChatStarted ? "bg-background/95 backdrop-blur-sm" : "bg-transparent"}`}>
                 {!isChatStarted ? (
                     /* Hero Mode: Centered Layout */
                     <div className="flex-1 flex flex-col items-center justify-center p-4 text-center max-w-5xl mx-auto w-full animate-in fade-in duration-500">
