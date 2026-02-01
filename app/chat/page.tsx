@@ -104,6 +104,9 @@ export default function ChatPage() {
                                 </Button>
                             </div>
                         </div>
+                        <div className="mt-auto pb-4">
+                            <Footer />
+                        </div>
                     </div>
                 ) : (
                     /* Chat Mode: Scrollable Messages + Fixed Bottom Input */
@@ -178,11 +181,15 @@ export default function ChatPage() {
                                         <span className="sr-only">Send message</span>
                                     </Button>
                                 </div>
+                                <p className="text-xs text-muted-foreground text-center mt-3">
+                                    AI can make mistakes. Check important info.
+                                </p>
                             </div>
                         </div>
                     </>
-                )}
-            </main>
-        </div>
+                )
+                }
+            </main >
+        </div >
     );
 }
