@@ -1,0 +1,6 @@
+zone_id,name_en,dominant_themes,short_description_en,recommended_time_min,poi_ids,vibe
+zone_old_town,Old Town,"history,architecture,icons,shopping","Medieval core of Prague with narrow lanes, the Astronomical Clock and Old Town Square.",180,"poi_old_town_square,poi_astronomical_clock,poi_municipal_house,poi_house_black_madonna","busy,romantic"
+zone_mala_strana,Lesser Town,"history,romantic,viewpoints","Picturesque Baroque quarter beneath the castle, reached via Charles Bridge.",150,"poi_charles_bridge,poi_petrin_hill","romantic,charming"
+zone_hradcany,Castle District,"history,architecture,viewpoints","Hilltop seat of power with Prague Castle, cathedrals and sweeping views.",240,"poi_prague_castle,poi_st_vitus_cathedral","grand,historic"
+zone_new_town,New Town,"history,shopping,nightlife,modern_architecture",19th-century boulevards around Wenceslas Square with museums and the modern riverside front.,180,"poi_wenceslas_square,poi_national_museum,poi_dancing_house,poi_national_theatre","urban,lively"
+zone_vysehrad,Vysehrad & South Bank,"history,viewpoints,quiet",Less crowded historic fortress area with parks and river panoramas.,150,poi_vysehrad,"quiet,local"
