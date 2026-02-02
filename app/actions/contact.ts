@@ -44,18 +44,43 @@ export async function submitContact(prevState: ContactState, formData: FormData)
         };
     }
 
-    // 3. "Send" Email
-    // In a real app, you would use Resend/SendGrid here.
-    // For this demo, we verify the secure env var exists and log it.
+    // 3. Send Email via Resend
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (!resendApiKey) {
+        console.error("Missing RESEND_API_KEY");
+        return { success: false, error: "Server configuration error." };
+    }
 
-    // Security: The email is read from Server Environment ONLY.
-    const destinationEmail = process.env.CONTACT_EMAIL || "contact@discoverprague.com";
+    try {
+        const { Resend } = await import("resend");
+        const resend = new Resend(resendApiKey);
 
-    console.log(`[SECURE CONTACT] Message from ${validatedFields.data.email} to ${destinationEmail}`);
-    console.log(`Content: ${validatedFields.data.message}`);
+        // For testing/free tier, 'from' must be 'onboarding@resend.dev' unless domain is verified.
+        // 'to' must be your verified email address.
+        const { data, error } = await resend.emails.send({
+            from: 'Discover Prague <onboarding@resend.dev>',
+            to: [process.env.CONTACT_EMAIL || "delivered@resend.dev"],
+            reply_to: validatedFields.data.email,
+            subject: `New Message from ${validatedFields.data.name}`,
+            html: `
+                <h2>New Contact Form Submission</h2>
+                <p><strong>Name:</strong> ${validatedFields.data.name}</p>
+                <p><strong>Email:</strong> ${validatedFields.data.email}</p>
+                <p><strong>Message:</strong></p>
+                <br/>
+                <p>${validatedFields.data.message.replace(/\n/g, '<br>')}</p>
+            `
+        });
 
-    // Simulate network delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+        if (error) {
+            console.error("Resend Error:", error);
+            return { success: false, error: "Failed to send email." };
+        }
 
-    return { success: true };
+        return { success: true };
+
+    } catch (e) {
+        console.error("Email Sending Failed:", e);
+        return { success: false, error: "Internal server error." };
+    }
 }
