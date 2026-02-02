@@ -127,24 +127,23 @@
     /* For pseudo-positioning if needed, though fixed works better */
   }
 
-  body::before {
-    content: "";
+  /* Dark mode adjustment for specific map pattern usage */
+  .dark .bg-map-pattern {
+    filter: invert(1);
+    opacity: 0.1;
+  }
+}
+
+@layer utilities {
+  .bg-map-pattern {
     position: fixed;
     inset: 0;
     z-index: 0;
-    /* Changed from -1 to 0 to sit ABOVE body background color */
     background-image: url('/bg-pattern.svg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.04;
-    /* User requested 0.04 */
     pointer-events: none;
-  }
-
-  /* Dark mode adjustment */
-  .dark body::before {
-    filter: invert(1);
-    opacity: 0.1;
   }
 }

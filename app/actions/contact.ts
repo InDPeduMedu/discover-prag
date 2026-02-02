@@ -58,9 +58,9 @@ export async function submitContact(prevState: ContactState, formData: FormData)
         // For testing/free tier, 'from' must be 'onboarding@resend.dev' unless domain is verified.
         // 'to' must be your verified email address.
         const { data, error } = await resend.emails.send({
-            from: 'Discover Prague <onboarding@resend.dev>',
+            from: 'Discover Prague <info@contact.discoverprague.com>',
             to: [process.env.CONTACT_EMAIL || "delivered@resend.dev"],
-            reply_to: validatedFields.data.email,
+            replyTo: validatedFields.data.email,
             subject: `New Message from ${validatedFields.data.name}`,
             html: `
                 <h2>New Contact Form Submission</h2>
