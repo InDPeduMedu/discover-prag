@@ -84,7 +84,7 @@ export default function ChatPage() {
 
                         {/* Hero Input */}
                         <div className="w-full max-w-2xl">
-                            <div className="relative flex items-center w-full rounded-2xl bg-secondary/30 border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all hover:border-primary/50 overflow-hidden shadow-lg">
+                            <div className="relative flex items-center w-full rounded-2xl bg-background border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all shadow-sm">
                                 <textarea
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
@@ -159,7 +159,7 @@ export default function ChatPage() {
                         {/* Fixed Bottom Input Area */}
                         <div className="w-full bg-background/80 backdrop-blur-lg border-t p-4 pb-8 z-10">
                             <div className="max-w-4xl mx-auto relative">
-                                <div className="relative flex items-center w-full rounded-2xl bg-secondary/30 border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all">
+                                <div className="relative flex items-center w-full rounded-2xl bg-background border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all shadow-sm">
                                     <textarea
                                         value={inputValue}
                                         onChange={(e) => setInputValue(e.target.value)}
