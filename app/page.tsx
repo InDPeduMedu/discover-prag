@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { PaperPlaneRight, Spinner } from "@phosphor-icons/react";
 import { useState, useRef, useEffect } from "react";
 import { sendMessage } from "@/app/actions/chat";
+import { sendGAEvent } from "@next/third-parties/google";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -39,6 +40,9 @@ export default function ChatPage() {
         // Optimistic UI: Add user message immediately
         setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
         setIsLoading(true);
+
+        // Log the inquiry to Google Analytics
+        sendGAEvent({ event: 'chat_inquiry', value: userMessage });
 
         try {
             const response = await sendMessage(userMessage);

@@ -11,6 +11,7 @@ export async function sendMessage(message: string) {
     }
 
     try {
+        console.log(`[Chat Inquiry]: ${message}`);
         const systemInstruction = `
 You are a friendly, expert local guide for Prague, Czech Republic. 
 Your task is to help users plan their trip to Prague using your comprehensive knowledge of the city.
