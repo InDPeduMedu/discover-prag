@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Button } from "@/components/ui/button";
+import { HeroShortcuts } from "@/components/hero-shortcuts";
 import { PaperPlaneRight, Spinner } from "@phosphor-icons/react";
 import { useState, useRef, useEffect } from "react";
 import { sendMessage } from "@/app/actions/chat";
@@ -28,13 +29,28 @@ export default function ChatPage() {
     };
 
     useEffect(() => {
-        scrollToBottom();
+        if (messages.length === 0) return;
+
+        const lastMessage = messages[messages.length - 1];
+        if (lastMessage.role === "user") {
+            scrollToBottom();
+        } else {
+            // For AI response, scroll to the top of the message so user can read from start
+            // We use a slight delay to ensure the DOM has updated with the new message
+            setTimeout(() => {
+                const lastMessageIdx = messages.length - 1;
+                const element = document.getElementById(`message-${lastMessageIdx}`);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 100);
+        }
     }, [messages, isLoading]);
 
-    const handleSend = async () => {
-        if (!inputValue.trim() || isLoading) return;
+    const handleSend = async (overrideText?: string) => {
+        const userMessage = (overrideText || inputValue).trim();
+        if (!userMessage || isLoading) return;
 
-        const userMessage = inputValue.trim();
         setInputValue("");
 
         // Optimistic UI: Add user message immediately
@@ -72,42 +88,46 @@ export default function ChatPage() {
             <div className="bg-map-pattern" />
             <Header />
 
-            <main className={`flex-1 flex flex-col relative overflow-hidden ${isChatStarted ? "bg-background/95 backdrop-blur-sm" : "bg-transparent"}`}>
+            <main className={`flex-1 flex flex-col relative overflow-y-auto ${isChatStarted ? "bg-background/95 backdrop-blur-sm" : "bg-transparent overflow-x-hidden"}`}>
                 {!isChatStarted ? (
                     /* Hero Mode: Centered Layout */
-                    <div className="flex-1 flex flex-col items-center justify-center p-4 text-center max-w-5xl mx-auto w-full animate-in fade-in duration-500">
-                        <div className="mb-12 space-y-6">
-                            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent break-words max-w-full">
-                                Discover Prague
-                                <br className="hidden md:inline" />
-                                <span className="text-primary italic block md:inline mt-2 md:mt-0">Tailored to YOU</span>
-                            </h1>
-                            <p className="text-lg text-muted-foreground md:text-2xl max-w-[800px] mx-auto">
-                                Your personal AI guide to the Heart of Europe.
-                            </p>
-                        </div>
-
-                        {/* Hero Input */}
-                        <div className="w-full max-w-2xl">
-                            <div className="relative flex items-center w-full rounded-2xl bg-background border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all shadow-sm">
-                                <textarea
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    onKeyDown={handleKeyDown}
-                                    placeholder="Describe your ideal trip..."
-                                    className="w-full min-h-[60px] p-5 pr-14 text-lg bg-transparent border-none focus:outline-none resize-none placeholder:text-muted-foreground/70"
-                                    style={{ fieldSizing: "content" } as any}
-                                />
-                                <Button
-                                    size="icon"
-                                    onClick={handleSend}
-                                    className="absolute right-3 bottom-3 h-10 w-10 rounded-xl shrink-0 transition-all shadow-sm"
-                                    disabled={!inputValue.trim() || isLoading}
-                                >
-                                    <PaperPlaneRight weight="fill" className="h-5 w-5" />
-                                    <span className="sr-only">Send message</span>
-                                </Button>
+                    <div className="flex-1 flex flex-col items-center pt-20 sm:pt-32 pb-20 p-4 text-center w-full animate-in fade-in duration-500">
+                        <div className="max-w-5xl mx-auto w-full flex flex-col items-center">
+                            <div className="mb-12 space-y-6">
+                                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent break-words max-w-full">
+                                    Discover Prague
+                                    <br className="hidden md:inline" />
+                                    <span className="text-primary italic block md:inline mt-2 md:mt-0">Tailored to YOU</span>
+                                </h1>
+                                <p className="text-lg text-muted-foreground md:text-2xl max-w-[800px] mx-auto">
+                                    Your personal AI guide to the Heart of Europe.
+                                </p>
                             </div>
+
+                            {/* Hero Input */}
+                            <div className="w-full max-w-2xl">
+                                <div className="relative flex items-center w-full rounded-2xl bg-background border border-border/50 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary/50 transition-all shadow-sm">
+                                    <textarea
+                                        value={inputValue}
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        onKeyDown={handleKeyDown}
+                                        placeholder="Describe your ideal trip..."
+                                        className="w-full min-h-[60px] p-5 pr-14 text-lg bg-transparent border-none focus:outline-none resize-none placeholder:text-muted-foreground/70"
+                                        style={{ fieldSizing: "content" } as any}
+                                    />
+                                    <Button
+                                        size="icon"
+                                        onClick={() => handleSend()}
+                                        className="absolute right-3 bottom-3 h-10 w-10 rounded-xl shrink-0 transition-all shadow-sm"
+                                        disabled={!inputValue.trim() || isLoading}
+                                    >
+                                        <PaperPlaneRight weight="fill" className="h-5 w-5" />
+                                        <span className="sr-only">Send message</span>
+                                    </Button>
+                                </div>
+                            </div>
+
+                            <HeroShortcuts onSelect={(text) => handleSend(text)} />
                         </div>
                     </div>
                 ) : (
@@ -117,7 +137,11 @@ export default function ChatPage() {
                         <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-8 scroll-smooth">
                             <div className="max-w-4xl mx-auto flex flex-col gap-6 pb-32">
                                 {messages.map((msg, idx) => (
-                                    <div key={idx} className={`flex w-full ${msg.role === "user" ? "justify-end" : "justify-start"} animate-in slide-in-from-bottom-2 duration-300`}>
+                                    <div
+                                        key={idx}
+                                        id={`message-${idx}`}
+                                        className={`flex w-full ${msg.role === "user" ? "justify-end" : "justify-start"} animate-in slide-in-from-bottom-2 duration-300`}
+                                    >
                                         <div
                                             className={`max-w-[85%] sm:max-w-[75%] rounded-2xl px-6 py-4 text-lg shadow-sm ${msg.role === "user"
                                                 ? "bg-primary text-primary-foreground"
@@ -175,7 +199,7 @@ export default function ChatPage() {
                                     />
                                     <Button
                                         size="icon"
-                                        onClick={handleSend}
+                                        onClick={() => handleSend()}
                                         className="absolute right-2 bottom-2 h-9 w-9 rounded-lg shrink-0 transition-all"
                                         disabled={!inputValue.trim() || isLoading}
                                     >
@@ -189,8 +213,7 @@ export default function ChatPage() {
                             </div>
                         </div>
                     </>
-                )
-                }
+                )}
             </main>
 
             {!isChatStarted && <Footer />}
