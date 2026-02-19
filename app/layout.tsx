@@ -4,6 +4,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ContactProvider } from "@/context/contact-context";
 import { ContactModal } from "@/components/contact-modal";
+import { CookieConsent } from "@/components/ui/cookie-consent";
+import Script from "next/script";
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -68,9 +70,35 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="google-consent-mode" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+
+            // Initialize consent with a default state of 'denied'
+            if (!localStorage.getItem('cookie-consent')) {
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+              });
+            } else {
+              const consent = localStorage.getItem('cookie-consent');
+              const value = consent === 'accepted' ? 'granted' : 'denied';
+              gtag('consent', 'default', {
+                'ad_storage': value,
+                'ad_user_data': value,
+                'ad_personalization': value,
+                'analytics_storage': value
+              });
+            }
+          `}
+        </Script>
         <ContactProvider>
           {children}
           <ContactModal />
+          <CookieConsent />
         </ContactProvider>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""} />

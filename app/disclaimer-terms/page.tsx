@@ -40,6 +40,11 @@ export default function DisclaimerPage() {
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">Governing law</h3>
                     <p className="text-muted-foreground leading-relaxed mb-6">Serbian law applies. Serbian courts have jurisdiction.</p>
+
+                    <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">Privacy</h3>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                        For information about how we handle your data and cookies, please see our <a href="/privacy-notice" className="text-primary hover:underline underline-offset-4 font-medium">Privacy Notice</a>.
+                    </p>
                 </article>
             </main>
             <Footer />
