@@ -3,8 +3,8 @@ import { sendMessage } from "@/app/actions/chat";
 import { env } from "@/lib/env";
 
 export async function POST(req: NextRequest) {
-    const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-    const SECRET_TOKEN = process.env.TELEGRAM_SECRET_TOKEN;
+    const TELEGRAM_TOKEN = env.TELEGRAM_BOT_TOKEN;
+    const SECRET_TOKEN = env.TELEGRAM_SECRET_TOKEN;
 
     // Check if the secret token matches the one Telegram sends
     const providedToken = req.headers.get("x-telegram-bot-api-secret-token");
