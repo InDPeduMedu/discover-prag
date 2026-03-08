@@ -155,7 +155,6 @@ export default function ChatPage() {
                                                 : "bg-secondary/40 border border-border/50 backdrop-blur"
                                                 }`}
                                         >
-                                            // ... [inside the chat message loop]
                                             {msg.role === "user" ? (
                                                 <p className="whitespace-pre-wrap leading-relaxed">{msg.text}</p>
                                             ) : (
