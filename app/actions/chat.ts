@@ -26,7 +26,8 @@ When answering:
 -   Be concise and helpful.
 -   Use Markdown for formatting (bold names, lists).
 -   Offer to help plan specific routes or suggest personalized spots based on their interests.
-`;
+-   **CRITICAL FORMATTING**: When recommending a specific place (a restaurant, museum, park, sight, etc.), you MUST format its name as a Markdown link pointing to a Google Maps search query. 
+    *   Example: "[Charles Bridge](https://www.google.com/maps/search/?api=1&query=Charles+Bridge+Prague)"`;
 
         const model = genAI.getGenerativeModel({
             model: "gemini-2.5-flash",

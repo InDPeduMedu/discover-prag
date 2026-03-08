@@ -31,6 +31,25 @@ export async function POST(req: NextRequest) {
             ? `Sorry, I encountered an error: ${aiResponse.error}`
             : aiResponse.text || "I'm not sure how to respond to that.";
 
+        // Sanitize the text for Telegram's strict MarkdownV2 requirements
+        // We only want to preserve links [text](url) and bold **text**, everything else needs escaping
+        const escapeTelegramText = (text: string) => {
+            // A basic implementation to escape characters that break Telegram MarkdownV2
+            // Note: A perfect markdown parser here is complex, but this handles most Gemini outputs safely.
+            let escaped = text.replace(/([_\[\]()~`>#+\-=|{}.!])/g, '\\$1');
+
+            // Re-enable bold
+            escaped = escaped.replace(/\\\*\\\*(.*?)\\\*\\\*/g, '*$1*');
+
+            // Re-enable links if they match the format \[text\]\(url\)
+            // The regex looks for escaped brackets and parens
+            escaped = escaped.replace(/\\\[(.*?)\\\]\\\(https?:\/\/(.*?)\\\)/g, '[$1](https://$2)');
+
+            return escaped;
+        };
+
+        const safeReplyText = escapeTelegramText(replyText);
+
         // 2. Send response back to Telegram
         const tgResponse = await fetch(`${TELEGRAM_API}/sendMessage`, {
             method: "POST",
@@ -39,8 +58,8 @@ export async function POST(req: NextRequest) {
             },
             body: JSON.stringify({
                 chat_id: chatId,
-                text: replyText,
-                // Removed parse_mode: 'Markdown' because Gemini output often breaks Telegram's strict Markdown parser resulting in silent failures
+                text: safeReplyText,
+                parse_mode: "MarkdownV2",
             }),
         });
 
