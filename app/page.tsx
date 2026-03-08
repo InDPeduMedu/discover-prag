@@ -8,8 +8,9 @@ import { PaperPlaneRight, Spinner } from "@phosphor-icons/react";
 import { useState, useRef, useEffect } from "react";
 import { sendMessage } from "@/app/actions/chat";
 import { sendGAEvent } from "@next/third-parties/google";
-import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { ErrorBoundary } from "react-error-boundary";
+import ReactMarkdown from "react-markdown";
 
 type Message = {
     role: "user" | "model";
@@ -61,7 +62,13 @@ export default function ChatPage() {
         sendGAEvent({ event: 'chat_inquiry', value: userMessage });
 
         try {
-            const response = await sendMessage(userMessage);
+            // Keep the context window reasonable by only sending the last 5 messages
+            const historyWindow = messages.slice(-5).map(m => ({
+                role: m.role,
+                text: m.text
+            }));
+
+            const response = await sendMessage(userMessage, "web", historyWindow);
 
             if (response.error) {
                 console.error(response.error);
@@ -148,26 +155,29 @@ export default function ChatPage() {
                                                 : "bg-secondary/40 border border-border/50 backdrop-blur"
                                                 }`}
                                         >
+                                            // ... [inside the chat message loop]
                                             {msg.role === "user" ? (
                                                 <p className="whitespace-pre-wrap leading-relaxed">{msg.text}</p>
                                             ) : (
-                                                <div className="prose prose-lg dark:prose-invert max-w-none break-words leading-relaxed">
-                                                    <ReactMarkdown
-                                                        remarkPlugins={[remarkGfm]}
-                                                        components={{
-                                                            h1: ({ node, ...props }: any) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
-                                                            h2: ({ node, ...props }: any) => <h2 className="text-lg font-bold mt-4 mb-2" {...props} />,
-                                                            h3: ({ node, ...props }: any) => <h3 className="text-md font-bold mt-3 mb-1" {...props} />,
-                                                            ul: ({ node, ...props }: any) => <ul className="list-disc pl-5 space-y-1 mb-3" {...props} />,
-                                                            ol: ({ node, ...props }: any) => <ol className="list-decimal pl-5 space-y-1 mb-3" {...props} />,
-                                                            li: ({ node, ...props }: any) => <li className="mb-0.5" {...props} />,
-                                                            p: ({ node, ...props }: any) => <p className="mb-3 last:mb-0" {...props} />,
-                                                            strong: ({ node, ...props }: any) => <strong className="font-bold" {...props} />,
-                                                        }}
-                                                    >
-                                                        {msg.text}
-                                                    </ReactMarkdown>
-                                                </div>
+                                                <ErrorBoundary fallback={<div className="text-red-500">Error rendering AI response.</div>}>
+                                                    <div className="prose prose-lg dark:prose-invert max-w-none break-words leading-relaxed">
+                                                        <ReactMarkdown
+                                                            remarkPlugins={[remarkGfm]}
+                                                            components={{
+                                                                h1: ({ node, ...props }: any) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
+                                                                h2: ({ node, ...props }: any) => <h2 className="text-lg font-bold mt-4 mb-2" {...props} />,
+                                                                h3: ({ node, ...props }: any) => <h3 className="text-md font-bold mt-3 mb-1" {...props} />,
+                                                                ul: ({ node, ...props }: any) => <ul className="list-disc pl-5 space-y-1 mb-3" {...props} />,
+                                                                ol: ({ node, ...props }: any) => <ol className="list-decimal pl-5 space-y-1 mb-3" {...props} />,
+                                                                li: ({ node, ...props }: any) => <li className="mb-0.5" {...props} />,
+                                                                p: ({ node, ...props }: any) => <p className="mb-3 last:mb-0" {...props} />,
+                                                                strong: ({ node, ...props }: any) => <strong className="font-bold" {...props} />,
+                                                            }}
+                                                        >
+                                                            {msg.text}
+                                                        </ReactMarkdown>
+                                                    </div>
+                                                </ErrorBoundary>
                                             )}
                                         </div>
                                     </div>

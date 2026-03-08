@@ -3,6 +3,16 @@ import { sendMessage } from "@/app/actions/chat";
 
 export async function POST(req: NextRequest) {
     const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+    const SECRET_TOKEN = process.env.TELEGRAM_SECRET_TOKEN;
+
+    // Check if the secret token matches the one Telegram sends
+    if (SECRET_TOKEN) {
+        const providedToken = req.headers.get("x-telegram-bot-api-secret-token");
+        if (providedToken !== SECRET_TOKEN) {
+            console.warn(`[Telegram Webhook] Unauthorized attempt with token: ${providedToken}`);
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+    }
 
     if (!TELEGRAM_TOKEN) {
         console.error("TELEGRAM_BOT_TOKEN is not set");
@@ -25,7 +35,7 @@ export async function POST(req: NextRequest) {
         console.log(`[Telegram Bot] ${chatId}: ${userText}`);
 
         // 1. Process with existing AI logic
-        const aiResponse = await sendMessage(userText);
+        const aiResponse = await sendMessage(userText, "telegram");
 
         const replyText = aiResponse.error
             ? `Sorry, I encountered an error: ${aiResponse.error}`

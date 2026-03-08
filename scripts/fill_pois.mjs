@@ -210,7 +210,6 @@ async function main() {
             console.log(`AI returned ${generatedPOIs.length} items.`);
 
             let genIndex = 0;
-            let pIndex = 0; // index into remainingPlaceholders is hard because we need index into targetData
 
             // Find indices again
             const stillPlaceholderIndices = [];

@@ -10,12 +10,18 @@ export interface POI {
     vibe: string;
 }
 
+export interface ItineraryItem {
+    poi_id: string;
+    action?: string;
+    estimated_minutes: number;
+}
+
 export interface Itinerary {
     id: string;
     title: string;
     ideal_for: string;
     total_minutes: number;
-    sequence: any[];
+    sequence: ItineraryItem[];
 }
 
 export type PragueData = {
@@ -91,12 +97,14 @@ export function getPragueData(): PragueData {
         // Load Itineraries
         const itinerariesPath = path.join(dataDir, "pack_medium_itineraries.json");
         const itinerariesRaw = fs.readFileSync(itinerariesPath, "utf-8");
-        const itinerariesParsed = JSON.parse(itinerariesRaw).map((item: any) => ({
-            id: item.itinerary_id,
-            title: item.title_en,
-            ideal_for: item.ideal_for_en,
-            total_minutes: item.total_estimated_minutes,
-            sequence: item.sequence
+        const parsedJson = JSON.parse(itinerariesRaw) as Array<Record<string, unknown>>;
+
+        const itinerariesParsed = parsedJson.map((item) => ({
+            id: item.itinerary_id as string,
+            title: item.title_en as string,
+            ideal_for: item.ideal_for_en as string,
+            total_minutes: item.total_estimated_minutes as number,
+            sequence: item.sequence as ItineraryItem[]
         }));
 
         cachedData = {
