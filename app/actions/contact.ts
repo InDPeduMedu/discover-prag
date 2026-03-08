@@ -27,7 +27,14 @@ export async function submitContact(prevState: ContactState, formData: FormData)
         return { success: true };
     }
 
-    // 2. Validate Input
+    // 2. Rate Limiting
+    const { aiRateLimit } = await import("@/lib/rate-limit");
+    const { success: rateLimitSuccess } = await aiRateLimit.limit("contact_form");
+    if (!rateLimitSuccess) {
+        return { success: false, error: "Too many requests. Please try again later." };
+    }
+
+    // 3. Validate Input
     const rawData = {
         name: formData.get("name"),
         email: formData.get("email"),

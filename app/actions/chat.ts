@@ -20,6 +20,11 @@ export async function sendMessage(
     try {
         console.log(`[Chat Inquiry from ${source}]: ${message}`);
 
+        // 0. Security: Input Length Validation
+        if (message.length > 2000) {
+            return { error: "Message is too long. Please keep it under 2000 characters." };
+        }
+
         // 1. Log the query for research
         await logUserQuery(message, source);
 
