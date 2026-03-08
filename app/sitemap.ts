@@ -1,13 +1,33 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    const baseUrl = 'https://discoverprague.com';
+    const lastModified = new Date();
+
     return [
         {
-            url: 'https://discoverprague.com',
-            lastModified: new Date(),
+            url: baseUrl,
+            lastModified,
             changeFrequency: 'weekly',
             priority: 1,
         },
-        // Add more routes here as the app grows
+        {
+            url: `${baseUrl}/about`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/privacy-notice`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.3,
+        },
+        {
+            url: `${baseUrl}/disclaimer-terms`,
+            lastModified,
+            changeFrequency: 'monthly',
+            priority: 0.3,
+        },
     ];
 }
