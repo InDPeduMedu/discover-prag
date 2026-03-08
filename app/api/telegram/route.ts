@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendMessage } from "@/app/actions/chat";
 
-const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
-const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
-
 export async function POST(req: NextRequest) {
+    const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+
     if (!TELEGRAM_TOKEN) {
         console.error("TELEGRAM_BOT_TOKEN is not set");
         return NextResponse.json({ error: "Config error" }, { status: 500 });
     }
+
+    const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 
     try {
         const body = await req.json();
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
         const chatId = body.message.chat.id;
         const userText = body.message.text;
 
-        console.log(`[Telegram Bot] Received message from ${chatId}: ${userText}`);
+        console.log(`[Telegram Bot] ${chatId}: ${userText}`);
 
         // 1. Process with existing AI logic
         const aiResponse = await sendMessage(userText);
@@ -31,7 +32,7 @@ export async function POST(req: NextRequest) {
             : aiResponse.text || "I'm not sure how to respond to that.";
 
         // 2. Send response back to Telegram
-        await fetch(`${TELEGRAM_API}/sendMessage`, {
+        const tgResponse = await fetch(`${TELEGRAM_API}/sendMessage`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -39,9 +40,15 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify({
                 chat_id: chatId,
                 text: replyText,
-                parse_mode: "Markdown", // Our AI uses markdown, Telegram supports it
+                // Removed parse_mode: 'Markdown' because Gemini output often breaks Telegram's strict Markdown parser resulting in silent failures
             }),
         });
+
+        if (!tgResponse.ok) {
+            const errorData = await tgResponse.text();
+            console.error("[Telegram API Error]:", errorData);
+            // We still return ok: true so Telegram doesn't keep retrying the same bad message
+        }
 
         return NextResponse.json({ ok: true });
     } catch (error) {
