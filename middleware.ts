@@ -2,19 +2,14 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const url = request.nextUrl.clone();
   const host = request.headers.get('host');
+  const { pathname, search } = request.nextUrl;
 
   // Check if host starts with www.
   if (host && host.startsWith('www.')) {
-    // Remove www. from the host
     const newHost = host.replace('www.', '');
-    
-    // Construct the new URL with the same protocol, new host, and path
-    const newUrl = new URL(url.pathname + url.search, `${url.protocol}//${newHost}`);
-    
-    // Redirect with 301 Moved Permanently for SEO
-    return NextResponse.redirect(newUrl, 301);
+    // Hardcoding https:// to break any internal http<->https redirect loops
+    return NextResponse.redirect(`https://${newHost}${pathname}${search}`, 301);
   }
 
   return NextResponse.next();
