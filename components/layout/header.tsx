@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useContact } from "@/context/contact-context";
 
+import { AnnouncementBar } from "./announcement-bar";
+
 export function Header() {
     const { openContact } = useContact();
 
@@ -29,6 +31,7 @@ export function Header() {
                     </Button>
                 </nav>
             </div>
+            <AnnouncementBar />
         </header>
     );
 }
