@@ -37,6 +37,16 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+      {
+        source: '/hammer-sickle-prague-communist-walking-tour-museum-visit/:slug*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/hidden-gems-of-prague-walk-with-cafe-stop/:slug*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
