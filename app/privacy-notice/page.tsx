@@ -13,14 +13,15 @@ export default function PrivacyPage() {
             <main className="flex-1 container mx-auto max-w-3xl px-4 py-8 md:py-16">
                 <article className="max-w-none">
                     <h2 className="text-3xl font-bold tracking-tight mb-6">Privacy Notice</h2>
-                    <p className="text-muted-foreground mb-4"><strong>Last updated: February 19, 2026</strong></p>
-                    <p className="text-muted-foreground leading-relaxed mb-8">DiscoverPrague.com is a personal AI travel planning demo for Prague. This notice explains what happens when you visit.</p>
+                    <p className="text-muted-foreground mb-4"><strong>Last updated: April 6, 2026</strong></p>
+                    <p className="text-muted-foreground leading-relaxed mb-8">DiscoverPrague.com is a personal AI travel planning demo for Prague. This notice explains what happens when you visit the website or use our Telegram bot.</p>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">What we collect</h3>
                     <ul className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground">
                         <li><strong>Server logs</strong> (automatic by Vercel): IP address, timestamp, user‑agent (browser/device) for technical purposes. These are kept for a short period and not used for tracking.</li>
                         <li><strong>Google Analytics (Opt-in)</strong>: usage data (pages visited, time spent, approximate location) to see how visitors use the site. Tracking is disabled by default and only activates if you click &quot;Accept&quot; on our cookie banner. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">Google Privacy Policy</a>.</li>
-                        <li><strong>Chat messages</strong>: your inputs are sent to Google Gemini (Google servers) to generate travel suggestions. See <a href="https://ai.google/responsibility/principles/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">Google AI Privacy</a>.</li>
+                        <li><strong>Chat messages</strong>: your inputs are sent to Google Gemini (Google servers) to generate travel suggestions. We log anonymized chat queries (without personal identifiers) for research and to improve the AI's accuracy. See <a href="https://ai.google/responsibility/principles/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-4">Google AI Privacy</a>.</li>
+                        <li><strong>Telegram Bot</strong>: if you use our Telegram bot, we process your message text and a temporary chat ID to deliver responses. We do not store your Telegram username or profile information.</li>
                         <li><strong>Contact email</strong>: if you use the contact button, your name, email and message are sent directly to the site owner’s email.</li>
                     </ul>
 

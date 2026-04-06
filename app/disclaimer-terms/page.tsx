@@ -13,10 +13,10 @@ export default function DisclaimerPage() {
             <main className="flex-1 container mx-auto max-w-3xl px-4 py-8 md:py-16">
                 <article className="max-w-none">
                     <h2 className="text-3xl font-bold tracking-tight mb-6">Disclaimer & Terms of Use</h2>
-                    <p className="text-muted-foreground mb-8"><strong>Last updated: February 1, 2026</strong></p>
+                    <p className="text-muted-foreground mb-8"><strong>Last updated: April 6, 2026</strong></p>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">About this site</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">DiscoverPrague.com is an <strong>AI demo</strong> to showcase travel planning for Prague. It’s a personal project with no commercial purpose.</p>
+                    <p className="text-muted-foreground leading-relaxed mb-6">DiscoverPrague.com is an <strong>AI demo</strong> to showcase travel planning for Prague. These terms apply to both the website and our official Telegram bot. It’s a personal project with no commercial purpose.</p>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">What you get</h3>
                     <p className="text-muted-foreground leading-relaxed mb-6">The AI generates general itinerary suggestions based on your chat inputs. There are no bookings, tours or services provided.</p>
