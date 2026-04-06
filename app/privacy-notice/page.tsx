@@ -12,7 +12,7 @@ export default function PrivacyPage() {
             <Header />
             <main className="flex-1 container mx-auto max-w-3xl px-4 py-8 md:py-16">
                 <article className="max-w-none">
-                    <h2 className="text-3xl font-bold tracking-tight mb-6">Privacy Notice</h2>
+                    <h1 className="text-3xl font-bold tracking-tight mb-6">Privacy Notice</h1>
                     <p className="text-muted-foreground mb-4"><strong>Last updated: April 6, 2026</strong></p>
                     <p className="text-muted-foreground leading-relaxed mb-8">DiscoverPrague.com is a personal AI travel planning demo for Prague. This notice explains what happens when you visit the website or use our Telegram bot.</p>
 

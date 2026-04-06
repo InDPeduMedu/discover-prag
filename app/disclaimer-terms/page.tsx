@@ -12,7 +12,7 @@ export default function DisclaimerPage() {
             <Header />
             <main className="flex-1 container mx-auto max-w-3xl px-4 py-8 md:py-16">
                 <article className="max-w-none">
-                    <h2 className="text-3xl font-bold tracking-tight mb-6">Disclaimer & Terms of Use</h2>
+                    <h1 className="text-3xl font-bold tracking-tight mb-6">Disclaimer & Terms of Use</h1>
                     <p className="text-muted-foreground mb-8"><strong>Last updated: April 6, 2026</strong></p>
 
                     <h3 className="text-xl font-semibold tracking-tight mt-8 mb-4">About this site</h3>
