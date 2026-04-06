@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://discoverprague.com/sitemap.xml',
+        sitemap: 'https://www.discoverprague.com/sitemap.xml',
     };
 }
