@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
     Bicycle,
     Coffee,
-    Heart,
     Camera,
     Sparkle,
     Ghost,
@@ -17,7 +16,7 @@ import {
 
 interface Category {
     title: string;
-    icon: any;
+    icon: React.ElementType;
     examples: string[];
 }
 
@@ -106,12 +105,11 @@ function ShortcutRow({
     onSelect
 }: {
     title: string;
-    icon: any;
+    icon: React.ElementType;
     examples: string[];
     onSelect: (t: string) => void
 }) {
     const [startIndex, setStartIndex] = useState(0);
-    const containerRef = useRef<HTMLDivElement>(null);
 
     // Number of items to show at once (responsive)
     const [itemsPerPage, setItemsPerPage] = useState(3);

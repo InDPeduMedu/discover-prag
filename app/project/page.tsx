@@ -4,7 +4,7 @@ import React from "react";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { useContact } from "@/context/contact-context";
-import { Sparkles, Code2, LineChart, Handshake } from "lucide-react";
+import { Sparkles, Code2, Handshake } from "lucide-react";
 
 export default function ProjectPage() {
     const { openContact } = useContact();
@@ -24,7 +24,7 @@ export default function ProjectPage() {
                             About The Project
                         </h1>
                         <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                            A personal passion project exploring what it looks like to build an "AI-first" travel planner from day one.
+                            A personal passion project exploring what it looks like to build an &quot;AI-first&quot; travel planner from day one.
                         </p>
                     </div>
                 </section>
@@ -40,7 +40,7 @@ export default function ProjectPage() {
                                 As an experienced product designer, I’m more technical than the average person but definitely not a full‑time engineer. That mix made this project especially interesting: I approached it like a design and product challenge, then relied heavily on AI to help with data, structure, copy, and logic.
                             </p>
                             <p className="text-muted-foreground leading-relaxed mt-4">
-                                The whole process has been surprisingly insightful, fun, and honestly pretty exciting. It's an exploration of how far you can go with modern AI tools and minimal coding knowledge while still creating something genuinely useful.
+                                The whole process has been surprisingly insightful, fun, and honestly pretty exciting. It&apos;s an exploration of how far you can go with modern AI tools and minimal coding knowledge while still creating something genuinely useful.
                             </p>
                         </div>
 
@@ -59,7 +59,7 @@ export default function ProjectPage() {
                             <div className="p-6 rounded-2xl border bg-card text-card-foreground shadow-sm">
                                 <Sparkles className="h-8 w-8 text-primary mb-4" />
                                 <h3 className="font-semibold text-lg mb-2">Human Curation</h3>
-                                <p className="text-sm text-muted-foreground">Learning where human judgment and unique "vibe" data still matter most.</p>
+                                <p className="text-sm text-muted-foreground">Learning where human judgment and unique &quot;vibe&quot; data still matter most.</p>
                             </div>
                         </div>
 

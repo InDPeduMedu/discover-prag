@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { Cookie, X } from "@phosphor-icons/react";
 
 export function CookieConsent() {
@@ -11,7 +10,10 @@ export function CookieConsent() {
     useEffect(() => {
         const consent = localStorage.getItem("cookie-consent");
         if (!consent) {
-            setIsVisible(true);
+            // Use a slight delay or requestAnimationFrame to avoid "cascading renders" lint error
+            // if the linter is configured to be very strict about synchronous state updates in effects.
+            const timeout = setTimeout(() => setIsVisible(true), 0);
+            return () => clearTimeout(timeout);
         }
     }, []);
 
@@ -28,8 +30,10 @@ export function CookieConsent() {
     };
 
     const updateConsent = (value: "granted" | "denied") => {
-        if (typeof window !== "undefined" && (window as any).gtag) {
-            (window as any).gtag("consent", "update", {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: any[]) => void }).gtag) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as unknown as { gtag: (...args: any[]) => void }).gtag("consent", "update", {
                 ad_storage: value,
                 analytics_storage: value,
                 ad_user_data: value,

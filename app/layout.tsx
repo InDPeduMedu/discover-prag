@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.discoverprague.com'),
+  metadataBase: new URL('https://www.discoverprague.com/'),
   title: "Discover Prague | AI Travel Companion & Local Guide",
   description: "Plan your perfect trip to Prague with our AI guide. Discover hidden gems, authentic Czech food, historic spots, and personalized itineraries tailored to you.",
   keywords: ["Prague travel", "AI travel guide", "Prague itinerary", "Czech Republic tourism", "Prague hidden gems", "best restaurants Prague", "Prague castle guide"],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Discover Prague | AI Travel Companion",
     description: "Your personal AI guide to the Heart of Europe. Experience Prague like a local with personalized itineraries.",
-    url: "https://www.discoverprague.com",
+    url: "https://www.discoverprague.com/",
     siteName: "Discover Prague",
     locale: "en_US",
     type: "website",

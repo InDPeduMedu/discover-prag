@@ -68,7 +68,7 @@ export default function AboutPage() {
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">Curated Database</h3>
                                     <p className="text-muted-foreground leading-relaxed">
-                                        We use a curated database of places in Prague tagged with attributes like history, architecture, viewpoints, and unique "vibes".
+                                        We use a curated database of places in Prague tagged with attributes like history, architecture, viewpoints, and unique &quot;vibes&quot;.
                                     </p>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                     <div className="container mx-auto max-w-2xl">
                         <h2 className="text-3xl font-bold mb-6">Feedback & Ideas</h2>
                         <p className="text-muted-foreground mb-8 text-lg">
-                            If you have ideas for new features or spot something wrong, we'd love to hear from you. This project evolves based on what real travelers find useful.
+                            If you have ideas for new features or spot something wrong, we&apos;d love to hear from you. This project evolves based on what real travelers find useful.
                         </p>
                         <button
                             onClick={openContact}

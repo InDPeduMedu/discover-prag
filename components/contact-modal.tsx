@@ -4,7 +4,6 @@ import { useContact } from "@/context/contact-context";
 import { X, PaperPlaneRight, CircleNotch } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Assuming we have or will use standard textarea or just raw HTML
 import { useState, useTransition } from "react";
 import { submitContact } from "@/app/actions/contact"; // We'll make sure this import works
 
@@ -60,14 +59,14 @@ export function ContactModal() {
                             <PaperPlaneRight size={32} weight="fill" />
                         </div>
                         <h3 className="text-2xl font-bold">Message Sent!</h3>
-                        <p className="text-muted-foreground">Thanks for reaching out. We'll get back to you soon.</p>
+                        <p className="text-muted-foreground">Thanks for reaching out. We&apos;ll get back to you soon.</p>
                     </div>
                 ) : (
                     <>
                         <div className="mb-6">
                             <h2 className="text-2xl font-bold tracking-tight">Contact Support</h2>
                             <p className="text-muted-foreground mt-1 text-sm">
-                                Send us a message and we'll reply to your email.
+                                Send us a message and we&apos;ll reply to your email.
                             </p>
                         </div>
 

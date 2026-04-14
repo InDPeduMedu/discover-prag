@@ -120,7 +120,7 @@ export default function ChatPage() {
                                         onKeyDown={handleKeyDown}
                                         placeholder="Describe your ideal trip..."
                                         className="w-full min-h-[60px] p-5 pr-14 text-lg bg-transparent border-none focus:outline-none resize-none placeholder:text-muted-foreground/70"
-                                        style={{ fieldSizing: "content" } as any}
+                                        style={{ fieldSizing: "content" } as React.CSSProperties & { fieldSizing?: string }}
                                     />
                                     <Button
                                         size="icon"
@@ -163,14 +163,14 @@ export default function ChatPage() {
                                                         <ReactMarkdown
                                                             remarkPlugins={[remarkGfm]}
                                                             components={{
-                                                                h1: ({ node, ...props }: any) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
-                                                                h2: ({ node, ...props }: any) => <h2 className="text-lg font-bold mt-4 mb-2" {...props} />,
-                                                                h3: ({ node, ...props }: any) => <h3 className="text-md font-bold mt-3 mb-1" {...props} />,
-                                                                ul: ({ node, ...props }: any) => <ul className="list-disc pl-5 space-y-1 mb-3" {...props} />,
-                                                                ol: ({ node, ...props }: any) => <ol className="list-decimal pl-5 space-y-1 mb-3" {...props} />,
-                                                                li: ({ node, ...props }: any) => <li className="mb-0.5" {...props} />,
-                                                                p: ({ node, ...props }: any) => <p className="mb-3 last:mb-0" {...props} />,
-                                                                strong: ({ node, ...props }: any) => <strong className="font-bold" {...props} />,
+                                                                h1: ({ ...props }) => <h1 className="text-xl font-bold mt-4 mb-2" {...props} />,
+                                                                h2: ({ ...props }) => <h2 className="text-lg font-bold mt-4 mb-2" {...props} />,
+                                                                h3: ({ ...props }) => <h3 className="text-md font-bold mt-3 mb-1" {...props} />,
+                                                                ul: ({ ...props }) => <ul className="list-disc pl-5 space-y-1 mb-3" {...props} />,
+                                                                ol: ({ ...props }) => <ol className="list-decimal pl-5 space-y-1 mb-3" {...props} />,
+                                                                li: ({ ...props }) => <li className="mb-0.5" {...props} />,
+                                                                p: ({ ...props }) => <p className="mb-3 last:mb-0" {...props} />,
+                                                                strong: ({ ...props }) => <strong className="font-bold" {...props} />,
                                                             }}
                                                         >
                                                             {msg.text}
@@ -204,7 +204,7 @@ export default function ChatPage() {
                                         onKeyDown={handleKeyDown}
                                         placeholder="Reply to Discover Prague..."
                                         className="w-full min-h-[50px] max-h-[200px] py-4 pl-5 pr-14 text-base bg-transparent border-none focus:outline-none resize-none placeholder:text-muted-foreground/70"
-                                        style={{ fieldSizing: "content" } as any}
+                                        style={{ fieldSizing: "content" } as React.CSSProperties & { fieldSizing?: string }}
                                     />
                                     <Button
                                         size="icon"
